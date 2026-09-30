@@ -5,8 +5,7 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load .env from project root (src/config -> ../../.env)
-// Must be the only place that reads process.env
+// Carga .env desde la ruta principal del proyecto (src/config -> ../../.env)
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 const requiredEnvVars = [
@@ -36,7 +35,6 @@ export const DB_HOST = process.env.DB_HOST;
 export const DB_PORT = parseInt(process.env.DB_PORT, 10) || 3306;
 export const DB_NAME = process.env.DB_NAME;
 
-// Centralized typed config object — single source of truth for env
 const config = {
   NODE_ENV,
   PORT,
@@ -47,7 +45,7 @@ const config = {
   DB_PASSWORD,
   DB_HOST,
   DB_PORT,
-  DB_NAME
+  DB_NAME,
 };
 
 export default config;

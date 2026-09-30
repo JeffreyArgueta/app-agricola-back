@@ -29,7 +29,7 @@ export const logger = winston.createLogger({
   level: NODE_ENV === 'production' ? 'info' : 'debug',
   format: winstonFormat,
   transports: [
-    // Errors -> logs/error-%DATE%.log with daily rotation
+    // Errores -> logs/error-%DATE%.log con rotación diaria
     new DailyRotateFile({
       filename: 'logs/error-%DATE%.log',
       datePattern: 'YYYY-MM-DD',
@@ -38,7 +38,7 @@ export const logger = winston.createLogger({
       maxSize: '20m',
       zippedArchive: true,
     }),
-    // All logs -> logs/combined-%DATE%.log with daily rotation
+    // Todos los logs -> logs/combined-%DATE%.log con rotación diaria
     new DailyRotateFile({
       filename: 'logs/combined-%DATE%.log',
       datePattern: 'YYYY-MM-DD',
@@ -63,7 +63,7 @@ if (NODE_ENV !== 'production') {
   );
 }
 
-// Stream for morgan HTTP logging — use as morgan('combined', { stream: logger.stream })
+// Flujo para el registro HTTP de morgan — usar como morgan('combined', { stream: logger.stream })
 logger.stream = {
   write: (message) => logger.info(message.trim()),
 };

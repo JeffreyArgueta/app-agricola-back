@@ -5,9 +5,9 @@ import { DB_DIALECT, DB_HOST, DB_NAME, DB_USER, DB_PASSWORD, NODE_ENV } from './
 export const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   dialect: DB_DIALECT || 'mysql',
-  dialectModule: undefined, // uses mysql2 via Dialect
+  dialectModule: undefined, // usa mysql2 mediante Dialect
   logging: NODE_ENV === 'production' ? false : (msg) => logger.debug(msg),
-  timezone: '-06:00', // explicit per §4; adjust to your locale if needed
+  timezone: '-06:00', // hora local de El Salvador, ajustar si necesario
   define: {
     underscored: true,
     freezeTableName: true,
