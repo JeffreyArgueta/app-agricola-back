@@ -1,0 +1,46 @@
+# Logs and depuration
+**/logs
+**/*.log
+**/pm-debug.log*
+**/arn-debug.log*
+**/arn-error.log*
+**/npm-debug.log*
+**/lerna-debug.log*
+
+# Environment files
+**/.env
+**/.env.local
+**/.env.*.local
+**/.env.development
+**/.env.test
+**/.env.production
+!**/.env.example
+
+# Dependencies and builds
+**/node_modules
+**/dist
+**/dist-ssr
+**/.cache
+**/build
+
+# lock files and temps
+**/package-lock.json
+**/yarn.lock
+**/pnpm-lock.yaml
+
+# Editor directories and files
+**/.vscode
+**/!.vscode/extensions.json
+**/!.vscode/settings.json
+**/.idea
+**/.DS_Store
+**/*.suo
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+**/*.sw?
+
+# Local files / tests
+**/*.local
+**/*.bak
+**/*.tmp
